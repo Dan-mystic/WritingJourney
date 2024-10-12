@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&family=Libre+Baskerville:wght@700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gentium Book Basic', serif;
+    color: #f0e6d6;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #1b1b1b;
+}
+
+.jungle-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.jungle-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.layer {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    animation: animate 50s linear infinite;
+}
+
+.layer1 {
+    background-image: url('images/layer1.png');
+    bottom: 0;
+    animation-duration: 100s;
+}
+
+.layer2 {
+    background-image: url('images/layer2.png');
+    bottom: 0;
+    animation-duration: 80s;
+}
+
+.layer3 {
+    background-image: url('images/layer3.png');
+    bottom: 0;
+    animation-duration: 60s;
+}
+
+.layer4 {
+    background-image: url('images/layer4.png');
+    bottom: 0;
+    animation-duration: 40s;
+}
+
+.fog {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('images/fog.png') repeat-x;
+    top: 0;
+    animation: fogMove 120s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes animate {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes fogMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+header {
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f0e6d6;
+    text-decoration: none;
+    font-size: 1.2em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #f0e6d6;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 50px 20px;
+    background: rgba(27, 27, 27, 0.8);
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0e6d6;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0e6d6;
+    color: #1b1b1b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #d9cbb6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(27, 27, 27, 0.9);
+    position: relative;
+    z-index: 1;
+    color: #f0e6d6;
+}
+
+footer p {
+    margin: 0;
+}
